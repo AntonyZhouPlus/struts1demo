@@ -13,7 +13,7 @@ public class LoginAction extends Action {
     public ActionForward execute(ActionMapping mapping, ActionForm form,
                                  HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-        // 转换成LoginForm
+        // 转换成LoginForm new-branch
         // 1.cast actionform into subclass of actionform
         LoginForm loginFrom = (LoginForm) form;
 
