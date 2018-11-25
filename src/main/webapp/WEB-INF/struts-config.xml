@@ -12,5 +12,7 @@
             <forward name="loginSuccess" path="/loginSuccess.jsp"></forward>
             <forward name="loginFail" path="/loginFail.jsp"></forward>
         </action>
+        <action path="/login2" type="com.zhouhang.struts.LoginAction2" name="loginForm">
+        </action>
     </action-mappings>
 </struts-config>

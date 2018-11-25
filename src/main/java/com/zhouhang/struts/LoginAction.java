@@ -14,11 +14,19 @@ public class LoginAction extends Action {
                                  HttpServletRequest request, HttpServletResponse response)
             throws Exception {
         // 转换成LoginForm
-        LoginForm login = (LoginForm) form;
-        if (login.getUserName().equals("admin")) {
-            return mapping.findForward("loginSuccess");
+        // 1.cast actionform into subclass of actionform
+        LoginForm loginFrom = (LoginForm) form;
+
+        // 2.business logic
+        String returnUrl = "";
+        if (loginFrom.getUserName().equals("admin")) {
+            returnUrl = "loginSuccess";
         } else {
-            return mapping.findForward("loginFail");
+            returnUrl = "loginFail";
         }
+
+        //3.return the forward by key word
+        return mapping.findForward(returnUrl);
+
     }
 }
